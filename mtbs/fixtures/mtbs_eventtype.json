@@ -1,0 +1,16 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "MTBS EventType",
+  "event_type": "Baby shower",
+  "modified": "2025-09-19 19:56:46.469085",
+  "name": "Baby shower"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "MTBS EventType",
+  "event_type": "Marriage",
+  "modified": "2025-09-19 19:57:02.943814",
+  "name": "Marriage"
+ }
+]

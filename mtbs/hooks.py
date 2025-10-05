@@ -242,3 +242,12 @@ app_license = "agpl-3.0"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+fixtures =[
+    #{"dt":"MTBS ServiceType"},
+    #{"dt":"MTBS EventType"},
+    #{"dt":"MTBS CourseName"}
+    #{"dt":"CRM Lead Source","filters":[["name","IN",["API"]]]},
+    {"dt":"Property Setter","filters":[["module","=","MTBS"]]},
+    #{"dt":"Custom Field","filters":[["module","=","MTBS"]]},    
+    #{"dt":"CRM Fields Layout","filters":[["name","IN",["CRM Deal-Data Fields","CRM Lead-Data Fields","CRM Deal-Side Panel","CRM Lead-Side Panel","CRM Lead-Quick Entry","CRM Deal-Required Fields"]]]}
+]
