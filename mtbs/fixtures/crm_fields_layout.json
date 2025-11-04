@@ -1,0 +1,56 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "CRM Fields Layout",
+  "dt": "CRM Lead",
+  "layout": "[\n  {\n    \"name\": \"first_tab\",\n    \"sections\": [\n      {\n        \"name\": \"person_section\",\n        \"columns\": [\n          {\n            \"name\": \"column_5jrk\",\n            \"fields\": [\n              \"salutation\",\n              \"email\"\n            ]\n          },\n          {\n            \"name\": \"column_5CPV\",\n            \"fields\": [\n              \"first_name\",\n              \"mobile_no\"\n            ]\n          },\n          {\n            \"name\": \"column_gXOy\",\n            \"fields\": [\n              \"last_name\",\n              \"gender\"\n            ]\n          }\n        ]\n      },\n      {\n        \"name\": \"lead_section\",\n        \"columns\": [\n          {\n            \"name\": \"column_EO1H\",\n            \"fields\": [\n              \"status\"\n            ]\n          },\n          {\n            \"name\": \"column_RWBe\",\n            \"fields\": [\n              \"lead_owner\"\n            ]\n          }\n        ]\n      }\n    ]\n  }\n]",
+  "modified": "2025-09-24 22:02:21.721788",
+  "name": "CRM Lead-Quick Entry",
+  "type": "Quick Entry"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "CRM Fields Layout",
+  "dt": "CRM Lead",
+  "layout": "[\n  {\n    \"label\": \"Details\",\n    \"name\": \"details_section\",\n    \"opened\": true,\n    \"columns\": [\n      {\n        \"name\": \"column_kl92\",\n        \"fields\": [\n          \"source\",\n          \"lead_owner\"\n        ]\n      }\n    ]\n  },\n  {\n    \"label\": \"Person\",\n    \"name\": \"person_section\",\n    \"opened\": true,\n    \"columns\": [\n      {\n        \"name\": \"column_XmW2\",\n        \"fields\": [\n          \"salutation\",\n          \"first_name\",\n          \"last_name\",\n          \"email\",\n          \"mobile_no\"\n        ]\n      }\n    ]\n  }\n]",
+  "modified": "2025-09-24 21:52:38.877378",
+  "name": "CRM Lead-Side Panel",
+  "type": "Side Panel"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "CRM Fields Layout",
+  "dt": "CRM Deal",
+  "layout": "[\n  {\n    \"label\": \"Contacts\",\n    \"name\": \"contacts_section\",\n    \"opened\": true,\n    \"editable\": false,\n    \"contacts\": []\n  },\n  {\n    \"label\": \"Details\",\n    \"name\": \"organization_section\",\n    \"opened\": true,\n    \"columns\": [\n      {\n        \"name\": \"column_na2Q\",\n        \"fields\": [\n          \"probability\",\n          \"next_step\",\n          \"deal_owner\",\n          \"deal_value\",\n          \"expected_deal_value\",\n          \"expected_closure_date\"\n        ]\n      }\n    ],\n    \"editingLabel\": false\n  }\n]",
+  "modified": "2025-09-25 18:54:52.602734",
+  "name": "CRM Deal-Side Panel",
+  "type": "Side Panel"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "CRM Fields Layout",
+  "dt": "CRM Lead",
+  "layout": "[\n  {\n    \"label\": \"Details\",\n    \"name\": \"details_section\",\n    \"opened\": true,\n    \"columns\": [\n      {\n        \"name\": \"column_ZgLG\",\n        \"fields\": [\n          \"lead_owner\"\n        ]\n      },\n      {\n        \"name\": \"column_OKSX\",\n        \"fields\": [\n          \"source\"\n        ]\n      }\n    ]\n  },\n  {\n    \"label\": \"Person\",\n    \"name\": \"person_section\",\n    \"opened\": true,\n    \"columns\": [\n      {\n        \"name\": \"column_6c5g\",\n        \"fields\": [\n          \"salutation\",\n          \"email\",\n          \"mobile_no\"\n        ]\n      },\n      {\n        \"name\": \"column_1n7Q\",\n        \"fields\": [\n          \"first_name\",\n          \"last_name\"\n        ]\n      }\n    ]\n  }\n]",
+  "modified": "2025-09-24 21:48:01.520509",
+  "name": "CRM Lead-Data Fields",
+  "type": "Data Fields"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "CRM Fields Layout",
+  "dt": "CRM Deal",
+  "layout": "[{\"name\":\"first_tab\",\"sections\":[{\"label\":\"Details\",\"name\":\"details_section\",\"opened\":false,\"columns\":[{\"name\":\"column_z9XL\",\"fields\":[\"probability\",\"closed_date\",\"deal_owner\",\"next_step\"]},{\"name\":\"column_gM4w\",\"fields\":[\"deal_value\",\"expected_deal_value\",\"expected_closure_date\"]}]},{\"label\":\"Service Type\",\"name\":\"service_type_section\",\"opened\":false,\"columns\":[{\"name\":\"column_5c8g\",\"fields\":[\"service_type\"]}]},{\"label\":\"Event\",\"name\":\"bridal_makeup_detail_section\",\"opened\":false,\"columns\":[{\"name\":\"column_6c8g\",\"fields\":[\"event_type\",\"datetime\"]},{\"name\":\"column_1n5Q\",\"fields\":[\"primary_mua\",\"secondary_mua\"]}]},{\"label\":\"Class\",\"name\":\"section_break_vicf\",\"opened\":false,\"columns\":[{\"name\":\"column_1n7Q\",\"fields\":[\"admission_number\",\"date_of_joining\"]},{\"name\":\"column_2n8Q\",\"fields\":[\"course_name\",\"batch\"]}]},{\"label\":\"Products\",\"name\":\"section_jHhQ\",\"opened\":true,\"columns\":[{\"name\":\"column_xiNF\",\"fields\":[\"products\"]}],\"editingLabel\":false,\"hideLabel\":true},{\"label\":\"New Section\",\"name\":\"section_WNOQ\",\"opened\":true,\"columns\":[{\"name\":\"column_ziBW\",\"fields\":[\"total\"]},{\"label\":\"\",\"name\":\"column_wuwA\",\"fields\":[\"net_total\"]}],\"hideBorder\":true,\"hideLabel\":true}],\"label\":\"\",\"editingLabel\":false}]",
+  "modified": "2025-09-26 21:50:11.778322",
+  "name": "CRM Deal-Data Fields",
+  "type": "Data Fields"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "CRM Fields Layout",
+  "dt": "CRM Deal",
+  "layout": "[{\"name\":\"first_tab\",\"sections\":[{\"label\":\"Required Fields\",\"name\":\"required_fields_section_lhvF\",\"opened\":true,\"hideLabel\":true,\"columns\":[{\"name\":\"required_fields_column_vbNL\",\"fields\":[\"expected_deal_value\",\"expected_closure_date\",\"service_type\"]}]}]}]",
+  "modified": "2025-10-05 19:35:58.273268",
+  "name": "CRM Deal-Required Fields",
+  "type": "Required Fields"
+ }
+]
