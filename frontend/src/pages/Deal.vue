@@ -92,7 +92,6 @@
             />
 
             <Button
-              style="display: none;"
               :tooltip="__('Go to website')"
               :icon="LinkIcon"
               @click="
@@ -109,7 +108,7 @@
             />
 
             <Button
-              v-if="isManager() && !isMobileView"
+              v-if="canDelete"
               :tooltip="__('Delete')"
               variant="subtle"
               icon="trash-2"
@@ -154,9 +153,8 @@
                   }
                 "
               >
-                <template #target="{ togglePopover }" >
+                <template #target="{ togglePopover }">
                   <Button
-                    style="display: none;"
                     class="h-7 px-3"
                     variant="ghost"
                     icon="plus"
@@ -210,16 +208,13 @@
                           />
                         </div>
                         <div class="flex items-center">
-                          <!--
-                          <Dropdown                           
-                          :options="contactOptions(contact)">
+                          <Dropdown :options="contactOptions(contact)">
                             <Button
                               icon="more-horizontal"
                               class="text-ink-gray-5"
                               variant="ghost"
                             />
                           </Dropdown>
-                          -->
                           <Button
                             variant="ghost"
                             :tooltip="__('View contact')"
@@ -241,16 +236,26 @@
                         </div>
                       </div>
                     </template>
-                    <div
-                      class="flex flex-col gap-1.5 text-base text-ink-gray-8"
-                    >
-                      <div class="flex items-center gap-3 pb-1.5 pl-1 pt-4">
+                    <div class="flex flex-col gap-1.5 text-base">
+                      <div
+                        v-if="contact.email"
+                        class="flex items-center gap-3 pb-1.5 pl-1 pt-4 text-ink-gray-8"
+                      >
                         <Email2Icon class="h-4 w-4" />
                         {{ contact.email }}
                       </div>
-                      <div class="flex items-center gap-3 p-1 py-1.5">
+                      <div
+                        v-if="contact.mobile_no"
+                        class="flex items-center gap-3 p-1 py-1.5 text-ink-gray-8"
+                      >
                         <PhoneIcon class="h-4 w-4" />
                         {{ contact.mobile_no }}
+                      </div>
+                      <div
+                        v-if="!contact.email && !contact.mobile_no"
+                        class="flex items-center justify-center py-4 text-sm text-ink-gray-4"
+                      >
+                        {{ __('No details added') }}
                       </div>
                     </div>
                   </Section>
@@ -382,10 +387,7 @@ import {
 } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useActiveTabManager } from '@/composables/useActiveTabManager'
-import { isMobileView } from '@/composables/settings'
-import { usersStore } from '@/stores/users'
 
-const {  isManager } = usersStore()
 const { brand } = getSettings()
 const { $dialog, $socket, makeCall } = globalStore()
 const { statusOptions, getDealStatus } = statusesStore()
@@ -408,10 +410,12 @@ const errorTitle = ref('')
 const errorMessage = ref('')
 const showDeleteLinkedDocModal = ref(false)
 
-const { triggerOnChange, assignees, document, scripts, error } = useDocument(
+const { triggerOnChange, assignees, permissions, document, scripts, error } = useDocument(
   'CRM Deal',
   props.dealId,
 )
+
+const canDelete = computed(() => permissions.data?.permissions?.delete || false)
 
 const doc = computed(() => document.doc || {})
 
@@ -681,7 +685,6 @@ const dealContacts = createResource({
     data.forEach((contact) => {
       contact.opened = false
     })
-    //console.log('data: ',data);
     return data
   },
 })

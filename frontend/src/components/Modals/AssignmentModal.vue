@@ -174,19 +174,16 @@ async function updateAssignees() {
         re_assign: true,
       }).then(() => {
         emit('reload')
-      })      
+      })
     } else {
       capture('assign_to', { doctype: props.doctype })
       call('frappe.desk.form.assign_to.add', {
         doctype: props.doctype,
         name: props.doc.name,
         assign_to: addedAssignees,
-      }).then(() =>{        
-        emit('reload')
       })
     }
   }
-  emit('reload')
   show.value = false
 }
 

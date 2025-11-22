@@ -38,7 +38,6 @@
             {{ note.title }}
           </div>
           <Dropdown
-          v-if="isManager()"
             :options="[
               {
                 label: __('Delete'),
@@ -116,7 +115,7 @@ import { timeAgo, formatDate } from '@/utils'
 import { TextEditor, call, Dropdown, Tooltip, ListFooter } from 'frappe-ui'
 import { ref, watch } from 'vue'
 
-const { getUser, isManager } = usersStore()//added isManager
+const { getUser } = usersStore()
 
 const showNoteModal = ref(false)
 const currentNote = ref(null)

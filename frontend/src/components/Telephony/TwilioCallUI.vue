@@ -250,7 +250,6 @@ let { style } = useDraggable(callPopup, {
 })
 
 async function startupClient() {
-  //debugger;
   log.value = 'Requesting Access Token...'
 
   try {
@@ -263,7 +262,6 @@ async function startupClient() {
 }
 
 function intitializeDevice(token) {
-  //debugger;
   device = new Device(token, {
     codecPreferences: ['opus', 'pcmu'],
     fakeLocalDTMF: true,
@@ -344,7 +342,6 @@ function rejectIncomingCall() {
 }
 
 function hangUpCall() {
-  //debugger;
   _call.disconnect()
   log.value = 'Hanging up incoming call'
   onCall.value = false
@@ -359,7 +356,6 @@ function hangUpCall() {
 }
 
 function handleDisconnectedIncomingCall() {
-  //debugger;
   log.value = `Call ended from handle disconnected Incoming call.`
   showCallPopup.value = false
   if (showSmallCallWindow.value == undefined) {
@@ -374,7 +370,6 @@ function handleDisconnectedIncomingCall() {
 }
 
 async function makeOutgoingCall(number) {
-  //debugger;
   phoneNumber.value = number
 
   if (device) {
@@ -481,7 +476,6 @@ function toggleCallWindow() {
 watch(
   () => log.value,
   (value) => {
-    //debugger;
     console.log(value)
   },
   { immediate: true },

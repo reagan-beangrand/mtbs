@@ -150,7 +150,6 @@ import InviteIcon from '@/components/Icons/InviteIcon.vue'
 import ConvertIcon from '@/components/Icons/ConvertIcon.vue'
 import CommentIcon from '@/components/Icons/CommentIcon.vue'
 import EmailIcon from '@/components/Icons/EmailIcon.vue'
-import Email2Icon from '@/components/Icons/EmailIcon.vue'
 import StepsIcon from '@/components/Icons/StepsIcon.vue'
 import Section from '@/components/Section.vue'
 import PinIcon from '@/components/Icons/PinIcon.vue'
@@ -222,11 +221,6 @@ const links = [
     label: 'Contacts',
     icon: ContactsIcon,
     to: 'Contacts',
-  },
-  {
-    label: 'Video',
-    icon: Email2Icon, // Choose your preferred icon
-    to: 'Video',
   },
   /*{
     label: 'Organizations',

@@ -150,7 +150,6 @@
     @loadMore="emit('loadMore')"
   />
   <ListBulkActions
-    v-if="isManager()"
     ref="listBulkActionsRef"
     v-model="list"
     doctype="CRM Call Log"
@@ -177,9 +176,6 @@ import {
 } from 'frappe-ui'
 import { sessionStore } from '@/stores/session'
 import { ref, computed, watch } from 'vue'
-import { usersStore } from '@/stores/users'
-
-const { isManager } = usersStore()
 
 const props = defineProps({
   rows: {

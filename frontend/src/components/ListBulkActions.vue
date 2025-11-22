@@ -6,7 +6,6 @@
     :selectedValues="selectedValues"
     @reload="reload"
   />
-  
   <AssignmentModal
     v-if="showAssignmentModal"
     v-model="showAssignmentModal"
@@ -15,16 +14,6 @@
     :doctype="doctype"
     @reload="reload"
   />
-  <!--
-  <AssignmentModal
-    v-if="showAssignmentModal"
-    v-model="showAssignmentModal"
-    v-model:assignees="bulkAssignees"
-    :selectedValues="selectedValues"
-    :doctype="doctype"
-    @reload="reload"
-  />
-  -->
   <DeleteLinkedDocModal
     v-if="showDeleteDocModal.showLinkedDocsModal"
     v-model="showDeleteDocModal.showLinkedDocsModal"
@@ -50,9 +39,6 @@ import { capture } from '@/telemetry'
 import { call, toast } from 'frappe-ui'
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
-import { usersStore } from '@/stores/users'
-
-
 
 const props = defineProps({
   doctype: {
@@ -107,18 +93,10 @@ function convertToDeal(selections, unselectAll) {
             call('crm.fcrm.doctype.crm_lead.crm_lead.convert_to_deal', {
               lead: name,
             }).then(() => {
-              alert('Converted successfully');
               toast.success(__('Converted successfully'))
               list.value.reload()
               unselectAll()
               close()
-            }).catch ((error) => {              
-              alert(error.message + ': ' + error.messages[0]);
-              toast.error(error.messages[0] || 'Failed to convert Deal')
-              list.value.reload()
-              unselectAll()
-              close()
-              //console.log('error: ',error);
             })
           })
         },
@@ -187,7 +165,6 @@ const customBulkActions = ref([])
 const customListActions = ref([])
 
 function bulkActions(selections, unselectAll) {
-  const { isManager } = usersStore()
   let actions = []
 
   if (!props.options.hideEdit) {
@@ -197,7 +174,7 @@ function bulkActions(selections, unselectAll) {
     })
   }
 
-  if (isManager() && !props.options.hideDelete) {//added
+  if (!props.options.hideDelete) {
     actions.push({
       label: __('Delete'),
       onClick: () => deleteValues(selections, unselectAll),

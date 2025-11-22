@@ -68,7 +68,6 @@ const show = ref(false)
 const mobileNumber = ref('')
 
 function makeCall(number) {
-  debugger;
   if (
     twilioEnabled.value &&
     exotelEnabled.value &&

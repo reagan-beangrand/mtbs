@@ -250,12 +250,9 @@ if (!isGridRow) {
     triggerOnChange: trigger,
     triggerOnRowAdd,
     triggerOnRowRemove,
-    document
   } = useDocument(doctype, data.value.name)
   triggerOnChange = trigger
-//console.log('trigger: ',trigger);
-//console.log('triggerOnChange: ',triggerOnChange);
-//console.log('document: ',document);
+
   provide('triggerOnChange', triggerOnChange)
   provide('triggerOnRowAdd', triggerOnRowAdd)
   provide('triggerOnRowRemove', triggerOnRowRemove)
@@ -313,34 +310,23 @@ const field = computed(() => {
   return _field
 })
 
-function isFieldVisible(field) {  
-  
+function isFieldVisible(field) {
   if (preview.value) return true
-   
-  return (    
-    ( field.fieldtype == 'Check' ||  (field.read_only && data.value[field.fieldname])
-      || !field.read_only) &&
-      (!field.depends_on || field.display_via_depends_on) &&  !field.hidden
+
+  const hideEmptyReadOnly = Number(window.sysdefaults?.hide_empty_read_only_fields ?? 1)
+
+  const shouldShowReadOnly = field.read_only && (
+    data.value[field.fieldname] ||
+    !hideEmptyReadOnly
   )
-   //let result;
-   // result = true;   
-  
-  /*
-  else{
-    //debugger;
-    let cond1 =field.fieldtype == 'Check'? true:false
-    let cond2 = field.read_only;
-    let cond3 = data.value[field.fieldname];
-    let cond4 = !field.read_only;
-    let cond5 = !field.depends_on;
-    let cond6 = field.display_via_depends_on;
-    let cond7 = !field.hidden;
 
-    result = (cond1 || (cond2 && cond3) || cond4) && (cond5 || cond6) && cond7;
-
-  }*/
-
-  //return result;
+  return (
+    (field.fieldtype == 'Check' ||
+      shouldShowReadOnly ||
+      !field.read_only) &&
+    (!field.depends_on || field.display_via_depends_on) &&
+    !field.hidden
+  )
 }
 
 const getPlaceholder = (field) => {
@@ -354,13 +340,11 @@ const getPlaceholder = (field) => {
   }
 }
 
-async function fieldChange(value, df) {
+function fieldChange(value, df) {
   if (isGridRow) {
-    await triggerOnChange(df.fieldname, value, data.value)
+    triggerOnChange(df.fieldname, value, data.value)
   } else {
-    //console.log('df.fieldname: ',df.fieldname)
-    //console.log('value: ',value)
-    await triggerOnChange(df.fieldname, value)   
+    triggerOnChange(df.fieldname, value)
   }
 }
 

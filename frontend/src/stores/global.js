@@ -12,7 +12,6 @@ export const globalStore = defineStore('crm-global', () => {
   }
 
   function makeCall(number) {
-    debugger;
     callMethod(number)
   }
 

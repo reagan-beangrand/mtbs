@@ -151,9 +151,6 @@ import {
   Tooltip,
 } from 'frappe-ui'
 import { ref, reactive, computed, provide } from 'vue'
-import { getSettings } from '@/stores/settings'
-
-const { brand } = getSettings()
 
 const { users, getUser, isManager, isAdmin } = usersStore()
 
@@ -304,6 +301,6 @@ function resetToDefault() {
 }
 
 usePageMeta(() => {
-  return { title: __('MTBS CRM Dashboard') ,icon: brand.favicon,}
+  return { title: __('CRM Dashboard') }
 })
 </script>

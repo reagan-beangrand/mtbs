@@ -63,8 +63,7 @@
           <div v-if="column.key === 'status'">
             <IndicatorIcon :class="item.color" />
           </div>
-          <!--
-          <div v-else-if="column.key === 'organization'" style="display:none;">
+          <div v-else-if="column.key === 'organization'">
             <Avatar
               v-if="item.label"
               class="flex items-center"
@@ -73,7 +72,6 @@
               size="sm"
             />
           </div>
-          -->          
           <div v-else-if="column.key === 'deal_owner'">
             <Avatar
               v-if="item.full_name"
