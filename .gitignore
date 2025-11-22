@@ -5,3 +5,7 @@
 tags
 node_modules
 __pycache__
+dev-dist
+mtbs/public/frontend
+mtbs/www/crm.html
+build
