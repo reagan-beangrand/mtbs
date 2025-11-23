@@ -6,7 +6,7 @@
           <div>
            
             <h3 class="text-2xl font-semibold leading-6 text-ink-gray-9">
-              {{ __('Hello-Create Deal') }}
+              {{ __('Create Deal') }}
             </h3>            
           </div>
           <div class="flex items-center gap-1">
@@ -14,7 +14,7 @@
               v-if="isManager() && !isMobileView"
               variant="ghost"
               class="w-7"
-              :tooltip="__('Hello-Edit fields layout')"
+              :tooltip="__('Edit fields layout')"
               :icon="EditIcon"
               @click="openQuickEntryModal"
             />
@@ -64,7 +64,7 @@
         <div class="flex flex-row-reverse gap-2">
           <Button
             variant="solid"
-            :label="__('Hello-Create')"
+            :label="__('Create')"
             :loading="isDealCreating"
             @click="createDeal"
           />

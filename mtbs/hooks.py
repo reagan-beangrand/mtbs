@@ -43,7 +43,8 @@ app_license = "agpl-3.0"
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-# doctype_js = {"doctype" : "public/js/doctype.js"}
+#doctype_js = {"doctype" : "public/js/doctype.js","doctype1" : "public/js/doctype1.js"}
+doctype_js = {"CRM Deal" : "public/js/custom_fcrm_deal.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -132,6 +133,10 @@ app_license = "agpl-3.0"
 # override_doctype_class = {
 # 	"ToDo": "custom_app.overrides.CustomToDo"
 # }
+
+override_doctype_class = {
+ 	"CRMDeal": "mtbs.overrides.fcrmdeal.CustomCRMDeal"
+}
 
 # Document Events
 # ---------------

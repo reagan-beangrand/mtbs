@@ -111,7 +111,7 @@
                   theme="red"
                   size="sm"
                   iconLeft="trash-2"
-                  @click="deleteContact()">Hello-Delete</Button>
+                  @click="deleteContact()">Delete</Button>
               </div>
             </div>
           </template>

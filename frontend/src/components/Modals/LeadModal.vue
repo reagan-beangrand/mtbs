@@ -5,10 +5,7 @@
         <div class="mb-5 flex items-center justify-between">
           <div>
             <h3 class="text-2xl font-semibold leading-6 text-ink-gray-9">
-             <!--
               {{ __('Create Lead') }}
-              --> 
-              Hello from Create Lead 
             </h3>
           </div>
           <div class="flex items-center gap-1">

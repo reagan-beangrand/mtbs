@@ -4,14 +4,14 @@
       <div class="mb-6 flex items-center justify-between">
         <div>
           <h3 class="text-2xl font-semibold leading-6 text-ink-gray-9">
-            {{ __('Hello-Convert to Deal') }}
+            {{ __('Convert to Deal') }}
           </h3>
         </div>
         <div class="flex items-center gap-1">
           <Button
             v-if="isManager() && !isMobileView"
             variant="ghost"
-            :tooltip="__('Hello-Edit deal\'s mandatory fields layout')"
+            :tooltip="__('Edit deal\'s mandatory fields layout')"
             :icon="EditIcon"
             @click="openQuickEntryModal"
           />

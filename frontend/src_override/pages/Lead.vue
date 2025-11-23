@@ -33,15 +33,11 @@
             </template>
           </Button>
         </template>
-      </Dropdown>
-      <!--
+      </Dropdown>      
       <Button
         :label="__('Convert to Deal')"
         variant="solid"
-        @click="showConvertToDealModal = true"
-      />
-      -->
-      <Button variant="solid" @click="showConvertToDealModal = true">Hello-Convert to Deal</Button>
+        @click="showConvertToDealModal = true"/>      
     </template>
   </LayoutHeader>
   <div v-if="doc.name" class="flex h-full overflow-hidden">

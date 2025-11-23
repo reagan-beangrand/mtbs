@@ -20,8 +20,9 @@
       <Button
         variant="solid"        
         iconLeft="plus"
-        @click="showContactModal = true"
-      >Hello - Create</Button>
+        @click="showContactModal = true">
+        Create
+      </Button>
     </template>
   </LayoutHeader>
   <ViewControls
