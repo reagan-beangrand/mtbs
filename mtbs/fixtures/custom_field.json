@@ -836,7 +836,7 @@
   "name": "CRM Deal-custom_batch",
   "no_copy": 0,
   "non_negative": 0,
-  "options": "MTBS CourseName",
+  "options": "MTBS BatchSeries",
   "permlevel": 0,
   "placeholder": null,
   "precision": "",
