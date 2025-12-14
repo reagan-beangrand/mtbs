@@ -57,7 +57,7 @@
   "docstatus": 0,
   "doctype": "CRM Fields Layout",
   "dt": "CRM Deal",
-  "layout": "[{\"name\":\"first_tab\",\"sections\":[{\"label\":\"Required Fields\",\"name\":\"required_fields_section_lhvF\",\"opened\":true,\"hideLabel\":true,\"columns\":[{\"name\":\"required_fields_column_vbNL\",\"fields\":[\"expected_deal_value\",\"expected_closure_date\",\"service_type\"]}]}]}]",
+  "layout": "[{\"name\":\"first_tab\",\"sections\":[{\"label\":\"Required Fields\",\"name\":\"required_fields_section_lhvF\",\"opened\":true,\"hideLabel\":true,\"columns\":[{\"name\":\"required_fields_column_vbNL\",\"fields\":[\"expected_deal_value\",\"expected_closure_date\",\"custom_service_type\"]}]}]}]",
   "modified": "2025-10-05 19:35:58.273268",
   "name": "CRM Deal-Required Fields",
   "type": "Required Fields"
