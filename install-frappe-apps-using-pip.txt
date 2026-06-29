@@ -1,0 +1,1 @@
+./env/bin/pip install --quiet --upgrade -e /home/reagan/frappe/v16.11.0/apps/erpnext 
